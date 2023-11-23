@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="fonction.js" defer></script>
+    <script src="ajax.js" defer></script>
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,38 +12,46 @@
 
 
     <nav id="nav">
-        <div class="nav_fermer">
+        <div class="nav">
             <p><span id="fermer">Fermer</span></p>
         </div>
 
-        <div class="nav_accueil">
+        <div class="nav">
             <p><span>Accueil</span></p>
         </div>
 
-        <div class="nav_lumiere">
+        <div class="nav">
             <p><span>Lumières</span></p>
         </div class="nav">
 
-        <div class="nav_prise">
+        <div class="nav">
             <p><span>Prises</span></p>
         </div>
 
-        <div class="nav_capteurs">
+        <div class="nav">
             <p><span>Capteurs</span></p>
         </div>
 
-        <div class="nav_plan">
+        <div class="nav">
             <p><span>Plan</span></p>
+        </div>
+
+        <div id="meteo" class="meteo">
+            <p><span>Meteo</span></p>
+            <span id="ville" class="infometeo"></span>
+            <span class="infometeo" id="temperature"></span>
+            <span class="infometeo" id="icone"></span>
+
         </div>
     </nav>
 
 
     <header id="header">
-
-        <img src="image/hamburger.png" id="imageHamburger" alt="hamburger">
         <img src="image/P.png" id="logo_P" alt="P">
+        <img src="image/hamburger.png" id="imageHamburger" alt="hamburger">
 
-        <h1>Domotique DIY</h1>
+
+        <div id="domo"><h1>Domotique DIY</h1></div>
 
     </header>
 
@@ -76,6 +85,11 @@
         <p><a href="">Deconz application</a></p>
     </footer>
     
+<!-- Clé api  weather : 5e3224bd40937b9f365f31fef4fa61c9-->
+
 
 </body>
 </html>
+
+
+
