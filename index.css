@@ -53,6 +53,10 @@ nav{
     z-index: 10;
 }
 
+nav div{
+    margin: 40px 15px 20px 15px;
+}
+
 #nav {
     background-color: rgb(255, 166, 0, 0.85);
     text-align: center;
@@ -71,11 +75,13 @@ nav{
     font-size: 10px;
 }
 
-.nav:hover{
-    background-color: grey;
+.nav:hover, #meteo:hover{
+    background-color: rgba(128, 128, 128, 0.783) ;
     transition-duration: 0.1s;
     padding-bottom: 1px;
     padding-top: 1px;
+    box-shadow: 15px 15px 25px black;
+    border-radius: 5px;
 }
 
 section{
@@ -101,3 +107,29 @@ footer{
 .infometeo{
     display: none;
 }
+
+
+#croix {
+    width: 20%;
+    height: 10%;
+    float: left;
+    display: block;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.nav:hover #croix{
+    margin: 25px 0px 0px 20px;
+}
+
+#maison {
+    width: 25%;
+    float: left;
+    display: block;
+    margin-left: 20px;
+}
+
+.nav:hover #maison{
+    margin: 15px 0px 0px 20px;
+}
+

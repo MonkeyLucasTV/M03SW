@@ -35,3 +35,46 @@ function AfficherMeteo(){
       document.getElementById("temperature").style.display = 'block';
    }
 }
+
+
+
+// Element barre nav cliquable
+
+const lumiere = document.getElementById("lumiereNAV");
+lumiere.addEventListener('click', AfficherLumiere);
+
+
+const capteur = document.getElementById("capteurNAV");
+capteur.addEventListener('click', AfficherCapteur);
+
+const prise = document.getElementById('priseNAV');
+prise.addEventListener('click', AfficherPrise);
+
+
+
+
+function AfficherLumiere(){
+   var lumhttp = new XMLHttpRequest(); 
+   lumhttp.open('GET', 'http://172.20.21.100/api/F276DD7951/lights/');
+   lumhttp.onreadystatechange = function () {
+     if (lumhttp.readyState === 4) {
+   
+       console.log(lumhttp.responseText);
+         console.log("stest");
+      }
+   };
+   lumhttp.send();
+   
+}
+
+
+
+function AfficherCapteur(){
+
+}
+
+
+
+function AfficherPrise(){
+
+}
