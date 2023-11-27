@@ -10,21 +10,28 @@ xhr.onreadystatechange = function () {
 
     test = JSON.parse(xhr.responseText);
     
-    var city = test.name;
-    console.log(test.name);
-    var temp = test.main.temp;
-    console.log(test.main.temp);
-    var icon = test.weather['0'].icon;
-
-    function RecupererMeteo(a, b, c){
-        document.getElementById("ville").innerHTML = a;
-        document.getElementById('temperature').innerHTML = b;
-        document.getElementById('icone').innerHTML = c;
-
-    }
-
-    RecupererMeteo(city, temp, icon);
+    
+    RecupererMeteo(test)
 
    }
 };
 xhr.send();
+
+
+
+
+function RecupererMeteo(reponse){
+    document.getElementById("ville").innerHTML = reponse.name;
+    document.getElementById('temperature').innerHTML = reponse.main.temp;
+    document.getElementById('icone').innerHTML = reponse.weather['0'].icon;
+
+
+    var longitude = reponseMeteoObject.coord.lon;
+    var temperature = reponseMeteoObject.main.temp;
+    var vitessevent = reponseMeteoObject.wind.speed;
+    var visibilité = reponseMeteoObject.visibility;
+    var humidité = reponseMeteoObject.main.humidity;
+    var ville = reponseMeteoObject.name;
+
+
+}
