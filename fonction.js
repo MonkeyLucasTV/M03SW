@@ -61,6 +61,20 @@ function AfficherLumiere(){
    
        console.log(lumhttp.responseText);
          console.log("stest");
+      
+      
+      var section = document.getElementById('section');
+      var lumiere = "" ;
+      for(num in objetLumiere){
+      let uniqueid=objetLumiere[num].uniqueid;
+      let etat=objetLumiere[num].state.on;
+      let type=objetLumiere[num].type;
+      lumiere=lumiere+'<div id="'+uniqueid+'" >';
+      lumiere= lumiere+'<img src="./icones/lightbulb.png" alt="lumiere"><buttonid="on">ON</button><button id="off">OFF</button>';
+      lumiere+="</div>";
+      }
+      
+      
       }
    };
    lumhttp.send();
