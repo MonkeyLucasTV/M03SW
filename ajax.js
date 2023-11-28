@@ -25,7 +25,7 @@ function RecupererMeteo(reponse){
     const icon = "https://openweathermap.org/img/wn/" + reponse.weather['0'].icon + ".png"
 
     document.getElementById("ville").innerHTML = reponse.name;
-    document.getElementById('temperature').innerHTML = reponse.main.temp;
+    document.getElementById('temperature').innerHTML = reponse.main.temp + "°C";
     document.getElementById('icone').src = icon;
 
 
