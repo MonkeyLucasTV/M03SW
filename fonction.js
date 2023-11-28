@@ -55,28 +55,31 @@ prise.addEventListener('click', AfficherPrise);
 
 function AfficherLumiere(){
    var lumhttp = new XMLHttpRequest(); 
-   lumhttp.open('GET', 'http://172.20.21.100/api/F276DD7951/lights/');
+   lumhttp.open('GET', 'http://172.20.21.57/api/F276DD7951/lights/');
    lumhttp.onreadystatechange = function () {
      if (lumhttp.readyState === 4) {
    
        console.log(lumhttp.responseText);
          console.log("stest");
+
+      lumos = JSON.parse(lumhttp.responseText);
       
       
       var section = document.getElementById('section');
       var lumiere = "" ;
-      for(num in objetLumiere){
-      let uniqueid=objetLumiere[num].uniqueid;
-      let etat=objetLumiere[num].state.on;
-      let type=objetLumiere[num].type;
+      for(num in lumos){
+      let uniqueid=lumos[num].uniqueid;
+      let etat=lumos[num].state.on;
+      let type=lumos[num].type;
       lumiere=lumiere+'<div id="'+uniqueid+'" >';
-      lumiere= lumiere+'<img src="./icones/lightbulb.png" alt="lumiere"><buttonid="on">ON</button><button id="off">OFF</button>';
+      lumiere= lumiere+'<img src="./icones/lightbulb.png" alt="lumiere"><button id="on">ON</button><button id="off">OFF</button>';
       lumiere+="</div>";
+      document.getElementById('section').innerHTML = lumiere;
       }
       
       
       }
-   };
+   }
    lumhttp.send();
    
 }
