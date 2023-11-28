@@ -68,20 +68,49 @@ function AfficherLumiere(){
       var section = document.getElementById('section');
       var lumiere = "" ;
       for(num in lumos){
+      
       let uniqueid=lumos[num].uniqueid;
       let etat=lumos[num].state.on;
       let type=lumos[num].type;
       lumiere=lumiere+'<div id="'+uniqueid+'" >';
-      lumiere= lumiere+'<img src="./icones/lightbulb.png" alt="lumiere"><button id="on">ON</button><button id="off">OFF</button>';
+      lumiere= lumiere+'<img src="./icones/lightbulb.png" alt="lumiere"><button id="on" onclick="Allumer('+ num +')">ON</button><button id="off" onclick="Eteindre('+num+')">OFF</button>';
       lumiere+="</div>";
-      document.getElementById('section').innerHTML = lumiere;
-      }
+
+      console.log(lumiere);
+      document.getElementById('section').innerHTML = lumiere;       
+
+   }
       
       
       }
    }
    lumhttp.send();
    
+}
+
+
+
+function Allumer(Num){
+      let req = new XMLHttpRequest;
+      req.open('PUT', 'http://172.20.21.57/api/F276DD7951/lights/'+Num+'/state');
+      req.onreadystatechange = function (){
+         if(req.readyState ===4 ){
+            console.log('Ready State 4');
+         }
+      }
+      req.send(JSON.stringify({"on" : true}))
+}
+
+function Eteindre(Num){
+   
+      let req = new XMLHttpRequest;
+      req.open('PUT', 'http://172.20.21.57/api/F276DD7951/lights/'+Num+'/state');
+      req.onreadystatechange = function (){
+         if(req.readyState ===4 ){
+            console.log('Ready State 4');
+         }
+      }
+      req.send(JSON.stringify({"on" : false}))
 }
 
 
