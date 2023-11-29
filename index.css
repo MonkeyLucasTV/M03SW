@@ -23,6 +23,7 @@ header{
     height: 10vh;
     background-color: rgb(190, 183, 183);
     margin: 0;
+    margin-bottom: 20px;
 }
 
 header img{
@@ -32,7 +33,7 @@ header img{
 
 #imageHamburger {
     float: left;
-    width: 12.5%;
+    width: 61px;
     margin-left: 0px;
     padding-left: 15px;
     top: 0;
@@ -182,4 +183,14 @@ footer{
 .nav:hover #plan{
     margin: 20px 0px 0px 25px;    
  
+}
+
+#Boutonreset{
+    float: right;
+}
+
+
+
+section div{
+    margin-bottom: 5.8px;
 }

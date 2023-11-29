@@ -3,9 +3,8 @@ xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=48.86&lon=2
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4) {
 
-    alert(xhr.responseText);
     var reponse = JSON.parse(xhr.responseText);
-    alert(reponse);
+
 
 
     test = JSON.parse(xhr.responseText);
