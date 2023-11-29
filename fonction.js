@@ -55,18 +55,15 @@ maison.addEventListener("click", Accueil)
 
 
 function Accueil(){
-      console.debug("Presentation ! ");
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               var reponse = xhttp.responseText;
-              console.debug(reponse);
               var pagehtml = document.createElement( 'html' );
               pagehtml.innerHTML = reponse;
               var section = pagehtml.getElementsByTagName( 'section' );
-              console.debug(section[0].innerHTML);
               document.getElementsByTagName("section")[0].innerHTML = section[0].innerHTML;
-              document.getElementsByTagName("section")[0].id="presentation";
+              document.getElementsByTagName("section")[0].id="section";
           }
       };
       xhttp.open("GET", "index.html", true);
@@ -223,7 +220,7 @@ function AfficherCapteur2(reponsecapteur) {
            }
            else
            {
-               etat = "Fermer"
+               etat = "Fermée"
            }
 
        }
