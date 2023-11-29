@@ -55,9 +55,25 @@ maison.addEventListener("click", Accueil)
 
 
 function Accueil(){
-   document.getElementById('section').innerHTML = "<h1>Application</h1>   <p>Ce site web permet d'afficher et de controler des modules zigbeecompatible avec la clé de marque Phoscon. <br>Un menu vous permettra de naviguer entre vos prises, vos lumières ouvos capteur présent dans votre maison.</p><h1>Materiel</h1><ul><li>Raspberry Pi</li><li>Clé zigbee (Phoscon)</li><li>Prises Zigbee</li><li>Capteurs zigbee</li>       <li>Lumières zigbee</li>   </ul><h1 id='txt_nav'>Navigation</h1>"
-
+      console.debug("Presentation ! ");
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var reponse = xhttp.responseText;
+              console.debug(reponse);
+              var pagehtml = document.createElement( 'html' );
+              pagehtml.innerHTML = reponse;
+              var section = pagehtml.getElementsByTagName( 'section' );
+              console.debug(section[0].innerHTML);
+              document.getElementsByTagName("section")[0].innerHTML = section[0].innerHTML;
+              document.getElementsByTagName("section")[0].id="presentation";
+          }
+      };
+      xhttp.open("GET", "index.html", true);
+      xhttp.send();
+  
 }
+
 
 
 function AfficherLumiere(){
