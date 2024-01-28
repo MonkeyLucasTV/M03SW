@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest(); 
-xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?lat=48.86&lon=2.34&appid=5e3224bd40937b9f365f31fef4fa61c9&units=metric');
+xhr.open('GET', 'CLé API OPENWEATHER');
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4) {
 
